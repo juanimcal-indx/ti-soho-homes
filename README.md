@@ -1,2 +1,5 @@
 # ti-soho-homes
-TI Exercise
+
+## TI Exercise
+
+- Folder Structure:
