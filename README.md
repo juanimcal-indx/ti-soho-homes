@@ -46,9 +46,10 @@
     - ```./deploy.sh```
   - The Cloud Function will watch for the source Bucket uploads and react copying the file to the destination bucket.
   - Once you finish reviewing the exercise, just run the wrapper scripts ```destroy.sh``` for removing the resources.
+  - You can also manually source ```bootstrap/config.sh``` in your current shell session and use terraform commands.
 
 - Security Considerations:
   - I tried to assign the minimum permissions needed for running the functions, you can take a look in the variables file [here](https://github.com/juanimcal-indx/ti-soho-homes/blob/d0e573c71d7023ec4bc855cc4a86c906cd95d670/terraform/service_accounts/variables.tf#L1)
   - At bucket level i was granting ```roles/storage.objectUser``` to the Cloud Function SA in order to be able to read/write to buckets.
-  
+
 
