@@ -40,7 +40,7 @@
   - First you should create SAs (this is the second part of the exercise but i added a 5th SA for the Cloud Function there) 
     - ```cd terraform/service_accounts/```
     - ```./deploy.sh```
-  - Deploy wrapper script will source config.sh vars and run ```terraform init && terraform apply```
+  - Deploy wrapper script will source config.sh vars and run ```terraform init && terraform apply```, __note that the service accounts script will output the Cloud Function SA email, this is needed for deploying the app__.
   - You can now deploy the Cloud Function:
     - ```cd terraform/app/```
     - ```./deploy.sh```
@@ -49,4 +49,6 @@
 
 - Security Considerations:
   - I tried to assign the minimum permissions needed for running the functions, you can take a look in the variables file [here](https://github.com/juanimcal-indx/ti-soho-homes/blob/d0e573c71d7023ec4bc855cc4a86c906cd95d670/terraform/service_accounts/variables.tf#L1)
+  - At bucket level i was granting ```roles/storage.objectUser``` to the Cloud Function SA in order to be able to read/write to buckets.
+  
 

@@ -21,3 +21,8 @@ resource "google_project_iam_member" "project_iam" {
   role     = each.value.role
   member   = "serviceAccount:${google_service_account.service_account["${each.value.sa}"].email}"
 }
+
+output "cloud_function_sa_email" {
+  value       = google_service_account.service_account["cloud-functions-app-sa"].email
+  description = "Cloud Function SA email, pass this value to the app terraform"
+}
