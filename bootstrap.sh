@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 set -eo pipefail
-# readonly REPO_ROOT=$(git rev-parse --show-toplevel)
-# source "${REPO_ROOT}/bootstrap/config.sh"
-source "./bootstrap/config.sh"
+readonly REPO_ROOT=$(git rev-parse --show-toplevel)
+
+source "${REPO_ROOT}/bootstrap/config.sh"
 
 usage() {
 cat<<EOF

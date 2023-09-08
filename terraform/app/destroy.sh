@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-# source "${REPO_ROOT}/bootstrap/config.sh"
-source "../../bootstrap/config.sh"
+readonly REPO_ROOT=$(git rev-parse --show-toplevel)
+
+source "${REPO_ROOT}/bootstrap/config.sh"
 
 terraform init
 terraform destroy
